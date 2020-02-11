@@ -12,9 +12,9 @@ RUN rm apache-tomcat-8.5.50.tar.gz
 
 RUN mv apache-* /app1/tomcat/
 RUN rm /app1/tomcat/webapps/host-manager/META-INF/context.xml
-ADD wget https://raw.githubusercontent.com/pnr6944/App1/master/context.xml /app1/tomcat/webapps/host-manager/META-INF/context.xml
+ADD url:https://raw.githubusercontent.com/pnr6944/App1/master/context.xml /app1/tomcat/webapps/host-manager/META-INF/context.xml
 RUN rm /app1/tomcat/conf/tomcat-users.xml
-ADD wget https://raw.githubusercontent.com/pnr6944/App1/master/tomcat-users.xml /app1/tomcat/conf/tomcat-users.xml
+ADD url: https://raw.githubusercontent.com/pnr6944/App1/master/tomcat-users.xml /app1/tomcat/conf/tomcat-users.xml
 WORKDIR /app1/tomcat
 EXPOSE 8080
 
